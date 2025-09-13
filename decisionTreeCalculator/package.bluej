@@ -1,14 +1,14 @@
 #BlueJ package file
-dependency1.from=DecisionTreeCalculator
+dependency1.from=DecisionTreeTest
 dependency1.to=DecisionTree
 dependency1.type=UsesDependency
-dependency2.from=DecisionTreeTest
+dependency2.from=DecisionTreeCalculator
 dependency2.to=DecisionTree
 dependency2.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
-editor.fx.0.x=275
-editor.fx.0.y=-6
+editor.fx.0.x=100
+editor.fx.0.y=100
 objectbench.height=106
 objectbench.width=1342
 package.divider.horizontal=0.6004140786749482
