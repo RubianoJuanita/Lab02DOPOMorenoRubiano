@@ -1,58 +1,51 @@
 import java.util.HashMap;
 
+/**
+ * DecisionTreeCalculator.java
+ * 
+ * @author ESCUELA 2025-02
+ */
+
 public class DecisionTreeCalculator {
 
     private HashMap<String, DecisionTree> variables;
-    private boolean lastOk; // guarda si la última operación fue exitosa
 
     public DecisionTreeCalculator() {
-        this.variables = new HashMap<>();
-        this.lastOk = true;
     }
 
-    // Crear una nueva variable (sin asignar árbol todavía)
+    // Create a new variable
     public void create(String name) {
-        if (name == null || name.isEmpty()) {
-            lastOk = false;
-            return;
-        }
-        if (variables.containsKey(name)) {
-            lastOk = false; // ya existe
-            return;
-        }
-        variables.put(name, null);
-        lastOk = true;
     }
 
-    // Crear un árbol y asignarlo a una variable existente
-    // Ejemplo: a := decisionTree con raíz "raiz"
+    // Create a decision tree and assign to an existing variable
+    // a := decisionTree
     public void assign(String a, String root) {
-        if (a == null || root == null || !variables.containsKey(a)) {
-            lastOk = false;
-            return;
-        }
-        DecisionTree dt = new DecisionTree(root);
-        variables.put(a, dt);
-        lastOk = true;
     }
 
-    // Consultar el árbol en forma de String
+    // Assigns the value of a unary operation to a variable
+    // a = b op parameters
+    // The operator characters are: '+' adding sons, '-' removing a node, '?' eval a
+    // decision tree
+    // The parameters for '+' are [[parent, yesChild, noChild]]
+    // The parameters for '-' are [[nodeName]]
+    // The parameters for '?' are [[node1, val1], [node2, val2], ....]
+
+    public void assignUnary(String a, String b, char op, String[][] parameters) {
+    }
+
+    // Assigns the value of a binary operation to a variable
+    // a = b op c
+    // The operator characters are: 'u' union, 'i' intersection, 'd' difference
+    public void assignBinary(String a, String b, char op, String c) {
+    }
+
+    // Returns the decisionTree in alphabetical order.
     public String toString(String decisionTree) {
-        if (decisionTree == null || !variables.containsKey(decisionTree)) {
-            lastOk = false;
-            return null;
-        }
-        DecisionTree dt = variables.get(decisionTree);
-        if (dt == null) {
-            lastOk = false;
-            return null;
-        }
-        lastOk = true;
-        return dt.toString();
+        return null;
     }
 
-    // Saber si la última operación fue exitosa
+    // If the last operation was successfully completed
     public boolean ok() {
-        return lastOk;
+        return false;
     }
 }
